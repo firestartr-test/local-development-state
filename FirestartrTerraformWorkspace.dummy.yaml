@@ -1,0 +1,26 @@
+apiVersion: firestartr.dev/v1
+kind: FirestartrTerraformWorkspace
+metadata:
+  annotations:
+    firestartr.dev/claim-ref: TFWorkspaceClaim/dummy
+    firestartr.dev/external-name: dummy
+    firestartr.dev/policy: apply
+  labels:
+    claim-ref: dummy
+  name: dummy-6ab3c9d3-83d4-4856-b0be-4b2c36139a70
+spec:
+  context:
+    backend:
+      ref:
+        kind: FirestartrProviderConfig
+        name: kubernetes-backend
+    providers: []
+  firestartr:
+    tfStateKey: 6ab3c9d3-83d4-4856-b0be-4b2c36139a70
+  source: Inline
+  module: |
+    output "dummy" {
+      value = "dummy"
+    }
+  values: "{}"
+  references: []
