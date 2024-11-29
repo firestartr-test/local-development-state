@@ -1,0 +1,9 @@
+apiVersion: firestartr.dev/v1
+kind: FirestartrProviderConfig
+metadata:
+  name: kubernetes-backend
+spec:
+  config: '{"namespace":"dev"}'
+  source: ""
+  type: kubernetes
+  version: 1.9.0
