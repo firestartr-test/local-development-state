@@ -29,9 +29,9 @@ spec:
     variable "a" {
       type = string
     }
-  values: '{"a":"${{ secret_references.mi-secreto-generado.password }}"}'
+  values: '{"a":"${{ references.external_secret_mi-secreto-generado.password }}"}'
   references:
-    - name: mi-secreto-generado.password
+    - name: external_secret_mi-secreto-generado.password
       ref:
         kind: ExternalSecret
         name: mi-secreto-generado
