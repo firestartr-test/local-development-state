@@ -31,7 +31,7 @@ spec:
     }
   values: '{"a":"${{ secret_references.mi-secreto-generado.password }}"}'
   references:
-    - name: rds_conn.mi-secreto-generado
+    - name: mi-secreto-generado.password
       ref:
         kind: ExternalSecret
         name: mi-secreto-generado
