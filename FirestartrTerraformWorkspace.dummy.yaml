@@ -24,7 +24,17 @@ spec:
   source: Inline
   module: |
     output "dummy" {
-      value = "dummy"
+      value = var.a
     }
-  values: "{}"
-  references: []
+    variable "a" {
+      type = string
+    }
+  values: '{"a":"${{ secret_references.mi-secreto-generado.password }}"}'
+  references:
+    - name: rds_conn.mi-secreto-generado
+      ref:
+        kind: ExternalSecret
+        name: mi-secreto-generado
+        key: password
+
+
