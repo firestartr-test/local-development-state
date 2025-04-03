@@ -32,18 +32,13 @@ spec:
     variable "a" {
       type = string
     }
-    terraform {
-      required_providers {
-        petstore = {
-          source  = "terraform-in-action/petstore"
-          version = "~> 1.0"
+    resource "random_id" "server" {
+      keepers = {
+          # Generate a new id each time we switch to a new AMI id
+          ami_id = "test"
         }
-      }
-    }
-    resource "petstore_pet" "pet" {
-        name    = "princess"
-        species = "cat"
-        age     = 3
+      
+        byte_length = 8
     }
   values: '{"a":"test"}'
   references: []
