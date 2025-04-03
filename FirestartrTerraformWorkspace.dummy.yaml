@@ -26,6 +26,9 @@ spec:
     output "dummy" {
       value = var.a
     }
+    output "dummy2" {
+      value = "dummy2"
+    }
     variable "a" {
       type = string
     }
